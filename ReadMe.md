@@ -21,7 +21,14 @@ whatever -storepass whatever
 keytool -import -keystore ./client-truststore.jks -file ./proxy_cert.pem -alias trustedproxy
 
 ### Java system properties for SSL
-When running your java application, set the following JVM system properties.
+Pass on the following JVM system properties while running the application. You could set them as system properties 
+in the code. 
+
+java -Djavax.net.ssl.trustStoreType=jks
+-Djavax.net.ssl.trustStore=./client-truststore.jks
+-Djavax.net.ssl.trustStorePassword=whatever
+com.redislabs.JedisApp
+
 
 Properties systemProps = System.getProperties();
 //systemProps.put("javax.net.debug", "ssl,handshake"); // this configuration will enable the debug output of the SSL handshake to stdout
