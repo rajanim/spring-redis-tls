@@ -1,22 +1,22 @@
-#Version compatibility
+# Version compatibility
 Jedis and Spring Data Redis compatibility is must, checkout this blog for further details https://www.bswen
 .com/2021/03/springboot-how-to-solve-ClassNotFoundException-redis-clients-jedis-util-Pool.html
 
 Jedis version is 3.3.0  
 Spring Data Redis is 2.3.5.RELEASE
 
-#Java client setup for one-way ssl
-##Java Keystore
+# Java client setup for one-way ssl
+## Java Keystore
 
-### On the client machine in the same directory where you downloaded the proxy cert. Proxy cert is typically present under  /etc/opt/redislabs/ on any RE node.
-### Execute the following commands to configure the Java keystore (https://docs.oracle.com/cd/E19830-01/819-4712/ablqw/
+###  On the client machine in the same directory where you downloaded the proxy cert. Proxy cert is typically present under  /etc/opt/redislabs/ on any RE node.
+###  Execute the following commands to configure the Java keystore (https://docs.oracle.com/cd/E19830-01/819-4712/ablqw/
 
-##Create a truststore
+## Create a truststore
 
 keytool -genkey -dname "cn=CLIENT" -alias truststorekey -keyalg RSA -keystore ./client-truststore.jks -keypass
 whatever -storepass whatever
 
-###Add proxy cert to the truststore
+### Add proxy cert to the truststore
 
 keytool -import -keystore ./client-truststore.jks -file ./proxy_cert.pem -alias trustedproxy
 
