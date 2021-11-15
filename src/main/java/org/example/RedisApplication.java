@@ -15,7 +15,7 @@ public class RedisApplication
     public static void main( String[] args ) {
 
         Properties systemProps = System.getProperties();
-        //systemProps.put("javax.net.debug", "ssl,handshake"); // this configuration will enable the debug output of the SSL handshake to stdout
+        systemProps.put("javax.net.debug", "ssl,handshake"); // this configuration will enable the debug output of the SSL handshake to stdout
         //systemProps.put("javax.net.ssl.keyStore","C:\\CERTS\\NEW-CERTS\\clientCredKeystore.jks");
         //systemProps.put("javax.net.ssl.keyStorePassword","123456789");
         systemProps.put("javax.net.ssl.trustStore", "/home/coder/project/code/spring-redis-tls/tests/tls/client-truststore.jks");

@@ -33,9 +33,9 @@ public class RedisConfig {
         JedisPoolConfig poolConfig = new JedisPoolConfig();
 
         JedisClientConfiguration jedisClientConfiguration = JedisClientConfiguration.builder() //
-              //  .useSsl()
-                //.sslParameters(sslParameters)
-                //.sslSocketFactory(socketFactory).and()
+                .useSsl()
+                .sslParameters(sslParameters)
+                .sslSocketFactory(socketFactory).and()
                 .clientName("redis-client")
                 .usePooling().poolConfig(poolConfig)
                 .build();
